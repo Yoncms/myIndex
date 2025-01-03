@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  justify-content: center;
+  /* background-color: #fff; */
+  max-width: 2000px;
+  margin: 0 auto;
+  background: url("bg.jpg") no-repeat;
+  
+  /* 让背景图基于容器大小伸缩，铺满窗口，不变形，但是窗口如果大于图片，拉伸后图片的有些部位看不见 */
+  background-size: cover;
+
+  /* 图片按照原来的窗口大小的比例进行拉伸铺满窗口，会变形
+  /* background-size: 100% 100%;*/
+
+  /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+  /* background-attachment: fixed;*/
+}
+
+.btn {
+  width: 170px;
+  height: 70px;
+  /* 添加渐变背景 */
+  background: radial-gradient( 
+      #f0f0f0E6 0%, 
+      #e0e0e0E6 50%, 
+      #d0d0d0E6 100%
+  );
+  text-shadow: 3px 3px 5px #ddd;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 20px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+            background 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.3s ease;
+  transform-origin: center;
+  text-align: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  /* 添加阴影效果 */
+  box-shadow: 5px 5px 5px #999;
+  z-index:0;
+}
+
+.btn:hover {
+  /* 悬停时改变渐变色 */
+/*  background: radial-gradient( */
+/*      #f69d3c80 0%, */
+/*      #66ff6680 50%, */
+/*      #3f87a680 100%*/
+/*  );*/
+  background: radial-gradient( 
+      #c8c8c880 0%, 
+      #d8d8d880 50%, 
+      #e8e8e880 100%
+  );
+  transform: scale(1.35, 1.40); /*宽度放大50px，高度放大20px */
+  /*  transform: rotate(120deg); /*旋转120度 */
+  font-family: Impact,Charcoal,sans-serif;
+  color: rgb(187, 255, 0);
+  font-size: 32px;
+  z-index: 1;
+  /* 增强阴影效果 */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:not(:hover) {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            background 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+.btn sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+/* 为不同位置的按钮设置不同的渐变色 */
+.btn:nth-child(3n) {
+/*  background: linear-gradient(135deg, */
+/*      #f0f0f0E6 0%, */
+/*      #e8e8e8E6 50%, */
+/*      #d8d8d880 100%*/
+/*  );*/
+  background: radial-gradient(135deg, 
+      #c8c8c880 0%, 
+      #d8d8d880 50%, 
+      #e8e8e880 100%
+  );
+}
+
+.btn:nth-child(3n+1) {
+  background: radial-gradient(135deg, 
+      #e8e8e880 0%, 
+      #d8d8d880 50%, 
+      #c8c8c880 100%
+  );
+}
+
+.btn:nth-child(3n+2) {
+  background: radial-gradient(135deg, 
+      #e0e0e080 0%, 
+      #d0d0d080 50%, 
+      #c0c0c080 100%
+  );
+}
+
+@media (max-width: 1200px) {
+  body {
+      gap: 15px 20px;
+      padding: 20px;
+  }
+}
+
+#othercts{
+	color: #00FF00D9;
+	font-size: 26px;
+	white-space:normal; 
+	word-break:break-all;
+	overflow:hidde;
+	width:970px;
+    margin: 200px auto;
+}
+
+#othercts:hover{
+	background: linear-gradient(90deg, #00f 0%, #0f0 50%, #f00 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#dv{
+	font-size: 23px;
+	white-space:normal; 
+	word-break:break-all;
+	overflow:hidde;
+	width:1266;
+	height:100%;
+    margin: 10px auto;
+}
+
+#dv:hover{
+	background: linear-gradient(90deg, #f00 0%, #0f0 40%, #00f 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#rm{
+	font-size:20px;
+	font-family: Impact,Charcoal,sans-serif;
+	color: #333
+}
+
+#rm p:hover{
+	background: linear-gradient(90deg, #700 0%, #0f0 20%, #007 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* a{
+  text-decoration: none;
+  float: left;
+  /*background:url('./111.jpg');*/
+  /*background-size:cover;*/
+  /* display:block;
+  width: 12.7%;
+  height: 60px;
+  margin: 18px 0 0 1.4%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: #aaa;
+  border: 1px solid #334433;
+  background-color: #333333E6;
+  position: absolute;
+  z-index: 1 
+} */
+
+
+/* body{
+  background-image:url("./bg.jpg")
+} */
