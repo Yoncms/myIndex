@@ -1,0 +1,28 @@
+.video-preview-container {
+    float: left; margin: 8px 0px 20px 20px;
+    position: relative; width: 311px;
+    height: 180px; overflow: hidden; cursor: pointer;
+}
+.preview-thumb, .preview-video {
+    position: absolute; width: 100%; height: 100%;
+    object-fit: cover; transition: opacity 0.2s;
+}
+.preview-video { opacity: 0; pointer-events: none }
+.video-preview-container:hover .preview-video { opacity: 1 }
+.video-preview-container:hover .preview-thumb { opacity: 0 }
+
+#pagination {
+    position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);text-align: center; padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+#pagination span {
+    margin: 0 5px; padding: 5px 10px; cursor: pointer; 
+    border: 1px solid #aaa; border-radius: 4px;
+}
+#pagination .active {
+   background: #007bff; color: white; border-color: #007bff;
+}
+#pagination .disabled {
+    color: #ccc; cursor: default; border-color: #ccc;
+}       

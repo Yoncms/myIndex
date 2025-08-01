@@ -1,0 +1,61 @@
+<body>
+<div id="header">
+<script>
+const videos = 
+    '71a1f582ac52c9435b21b2ebe9d3067aef5fd136623973d628f2d10fb1e6f7d4c5cce7d23c2f9590ca07eb4e8c67a2e21bb'+
+    'f965bbf6a461b266d8a878a885fc3766d628b261b9086f5cc92e0a1ec3f14b7ac4478581130f3bfcec391b05135610ab944'+
+    '606885aed4cd57aa6655c8d486ca1f8f5fe6d34a378372a0c2472cfeaf9ccbf4dd1e4b623907d98d179773d69579710bfe2'+
+    '11d7474ab79ebd5a018077f24605eb468c9a8d9a2f402480fcd9d2bd534948f9f733700a8d47f06bbae474153693a502053'+
+    'd70ab578393276783d4f34316384776486424937628055035ed4abe74b3be9c1511a675e9b684f7bbb7a815154718b44c90'+
+    '7f30ce5fbb9efc87e1ca00a8862ae402223e3813c8f7192c13afe0da8834f0c3c52bf9ee41f47cf98a694bd3b4a4ea6ea03'+
+    'd13c243730b49a4d640a58019718cb20a2ee87e475ffd1d4f6dd84c4c7e3a5ddd51d79a0cd0d14a48e114e3adfadde8f411'+
+    '7a8eddeef338a65cd854d62de66ae89b1ca881aab425a54cba775484e2a45246133a60ad587ae870284ba1a5d3b44e1dd94'+
+    '27ef3dfe24e823c418e7f60fb74571b61f7b8ccb8e9efb82bea05adae61a29e3e43c583097f28dab603eaae3a1abbbee422'+
+    'dda75a632d8988934c03d8fcd0aece8ce4b419cea441f50f8fb2e7209fb0ab3ed297af02d5fec55c91d298667b8831f2411'+
+    'd740f5d18c15db8fd62a9e9a452c1abbc739ee9e6e6646cd4cd2c367e3e7e81943a9b43e5e00ff2a5e26b4728379736c16b'+
+    'e2cf4cfbf8bef10ff8cbff60fdf33824429f88c5c6901176be47c71e09b10776a2df665f92061c2906f5b1629a780adabb1'+
+    'a243bdf3ffadb483335e4922e78dcfd99b2b70ea492ac6b93d0f8e63c1dd58813b03a42797fc6eaf489c1d717bd5c7fe613'+
+    'e5f39af31c721b00c9dde98e55d0ac28ec5f20afbd5433c720ff292054b2c4b2602a1a944dc4b76640e4dde3c67c4049cea'+
+    '857440ee76c16e844277532b7d19eb8c86f3cc2f91fdd643ec1502c2831e25c3e74a8fcd0fe3843abdae93dc6ce03d863a0'+
+    'e408c9d3f7ea45e888c8459c0d32a64146a8ce881a92ce4a0c55eed133d609d3d7bfe250ec0490e3c850c11fc0f5c06e531'+
+    '51b63c66ea395501157f5a6db204788cb8e32ea51b47e624c8bc4149eac06ab11af9c5825066eeccec1fa9d5382efac2369'+
+    '988817c0e7cdb1ee172b9a27e883d49f55bff4ba972d19fe84f34bfcb1e6e6833cfbe921fb547b82ed0d5d33f1eae13abf2'+
+    '21cd047b787b3b8c6417365f194b2314026d034c4a721c016497365d216d1d33c1b0060e3069724c2dbbc5ff839e9e5e249'+
+    '0d5b9e94c67b6c7415dd961bf751d26a023e447d7638cd52d85a3f6001e6bfada061b53cd1a561b818d321265b549b9ee30'+
+    'cbdfb71684f04919e3f955881393e7bc7f0daacc555ff412e5370c944730419e15d5eae0832bebb4533110b73ac9c966369'+
+    'd0e8988dfd87b363fc26f8bf642bde1a742ddca32da62210e0f7c7412034649a7bae1765f6bc05d847317f80ebfc9be7d6f'+
+    'bc2157b14b5d3477747b836c7bafa1626bbfc15a879d7912fbe9da81a8f684329af25a01a2e31449cd19d627069fda85ed9'+
+    '1d063796d664d29941f130d93acb4c5d356ded242c8780a72b47d420469e7b9ffa9a7fc0699e8f6f18c4b90fb2331087beb'+
+    'b8bf3c25ed58401ee711d89cbab9fdbcdbef0c07ab177a85e4179e909c98ca878149dda8cccd58ac261dad94a1de83a64e3'+
+    '1efd26b1405c0ca662b3d9cc37ac47e4913be8c33e2ebdc273f4070aee7b5c2f3aaf8f2553aa950d31e15';
+</script>
+</div>
+<div id="pagination"></div>
+</body>
+
+<style>
+#pagination {
+    position: fixed;  bottom: 0;  left: 0;  width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;  padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.video-preview-container {
+    float: left; margin: 8px 0px 20px 20px;
+    position: relative; width: 311px;
+    height: 180px; overflow: hidden; cursor: pointer;
+}
+.preview-thumb, .preview-video {
+    position: absolute; width: 100%; height: 100%;
+    object-fit: cover; transition: opacity 0.2s;
+}
+.preview-video { opacity: 0; pointer-events: none }
+.video-preview-container:hover .preview-video { opacity: 1 }
+.video-preview-container:hover .preview-thumb { opacity: 0 }
+</style>
+
+<script src="./crypto.js"></script>
+<script src="./index.js"></script>
+

@@ -1,0 +1,45 @@
+<title>💛▶ </title>
+<link href="./video.css" rel="stylesheet" />
+<style>
+    html, body {margin: 0; padding: 0; height: 100%; background-color: black}
+
+    #my-video {width: 100%; height: 100vh}  /* 视口高度100% */
+
+    .video-js {object-fit: cover}   /* 保持比例并裁剪 */
+</style>
+
+<!-- 引入 Video.js JS -->
+<script src="./xvideo.js"></script>
+
+<div style="text-align:center">
+
+<!-- 在video标签里可以添加poster="poster.jpg"，指定图片作为封面 -->
+<video
+  id="my-video"  class="video-js vjs-default-skin"
+  controls  preload="auto" autoplay  muted
+  data-setup="{}"
+>
+  <source src="../index/BDA-0811.mp4" type="video/mp4" />
+
+</video>
+
+<script>
+
+var player = videojs('my-video');
+
+player.on('loadedmetadata', function () {
+    var duration = player.duration();
+    console.log("loadedmetadata: 视频时长为 " + duration + " 秒");
+});
+
+player.on('timeupdate', ()=>{
+
+    console.log("timeupdate: 当前播放时间为 " + player.currentTime() + " 秒");
+});
+
+
+
+</script>
+
+
+
