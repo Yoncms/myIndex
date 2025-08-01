@@ -22,14 +22,14 @@ body {
 
 .btn {
   width: 170px;
-  height: 70px;
+  height: 88px;
   /* 添加渐变背景 */
   background: radial-gradient( 
-      #f0f0f0E6 0%, 
-      #e0e0e0E6 50%, 
-      #d0d0d0E6 100%
+      #d0d0d0E6 0%, 
+      #e0e0e0E6 40%, 
+      #f0f0f0E6 100%
   );
-  text-shadow: 3px 3px 5px #ddd;
+  text-shadow: 3px 3px 5px #a99;
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 8px;
   display: flex;
@@ -64,7 +64,7 @@ body {
       #d8d8d880 50%, 
       #e8e8e880 100%
   );
-  transform: scale(1.35, 1.40); /*宽度放大50px，高度放大20px */
+  transform: scale(1.35, 1.50); /*宽度放大50px，高度放大20px */
   /*  transform: rotate(120deg); /*旋转120度 */
   font-family: Impact,Charcoal,sans-serif;
   color: rgb(187, 255, 0);
@@ -125,13 +125,18 @@ body {
 }
 
 #othercts{
-	color: #00FF00D9;
-	font-size: 26px;
+	width:100%;
+	height:625px;
+	color: #333333E5;
+	font-size: 23px;
+	font-weight: 700;
+	font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+	letter-spacing: 0.5px;    /* 增加字母间距 */
+	word-spacing: 1px;        /* 增加单词间距 */
 	white-space:normal; 
 	word-break:break-all;
-	overflow:hidde;
-	width:970px;
-    margin: 200px auto;
+	overflow:hidden;
+	margin-top: 5px;
 }
 
 #othercts:hover{
@@ -140,14 +145,37 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+#othercts:hover{
+  /*	width: 650px;*/
+  /*	height:350px;*/
+	transition: transform 1s ease-in-out;
+  /*	transform: rotate(0)*/
+  /*	transform: rotateX(0) rotateY(0); 立体旋转 */
+}
+
+/*#othercts{*/
+/*	width: 650px;*/
+/*	height:350px;*/
+/*	margin-top:90px;*/
+/*	transition: transform 1s ease-in-out;*/
+/*	transform: rotate(120deg)*/
+/*	transform: rotateX(120deg) rotateY(120deg); 立体旋转 */
+
+/*	transform-style: preserve-3d; 保持 3D 子元素效果 */
+/*	transition: transform 1s ease-in-out;*/
+/*}*/
+
 #dv{
+	width:100%;
+	height:625px;
 	font-size: 23px;
+	font-weight:700;
+	font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+	color: #333333E5;
 	white-space:normal; 
 	word-break:break-all;
-	overflow:hidde;
-	width:1266;
-	height:100%;
-    margin: 10px auto;
+	overflow:hidden; 
+	margin: 5px auto;
 }
 
 #dv:hover{
@@ -157,16 +185,24 @@ body {
 }
 
 #rm{
-	font-size:20px;
-	font-family: Impact,Charcoal,sans-serif;
-	color: #333
+	width: 100%;
+	font-size: 23px;
+	font-weight:700;
+	font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+	color: #333333E5;
+	white-space:normal; 
+	word-break:break-all;
+	overflow:hidden; 
+	font-size:23px;
+/*	font-family: Impact,Charcoal,sans-serif;*/
 }
 
 #rm p:hover{
-	background: linear-gradient(90deg, #700 0%, #0f0 20%, #007 100%);
+	background: linear-gradient(90deg, #700 0%, #0f0 20%, #007 20%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
 
 /* a{
   text-decoration: none;

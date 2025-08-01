@@ -1,0 +1,322 @@
+<div style='text-align:center; margin-top:0px'>
+<textarea id='ttra' cols=180 rows=42></textarea>
+</div>
+<script src='./Crypto.js'></script>
+<script>
+const DN = Date.now();
+
+function xsplit(str){
+    let sss = '';
+    for(let i=0; i<str.length; i+=99){
+        sss += "'" + str.slice(i, i+99) + "'+\n";
+    }
+    console.log(sss);
+    document.querySelector('#ttra').value = "'" + keyRand+"'"+
+               '==>'+ "'" + ivRand + "'\n" + sss;
+}
+
+function rand(length = 32) {
+  // 使用时间戳 + Math.random() 构造源字符串
+  const seed = DN.toString() + Math.random().toString();
+  const hash = CryptoJS.MD5(seed).toString(); // 32 个十六进制字符
+  return hash.substring(0, length); // 截取前 N 位
+}
+keyRand = rand();
+ivRand = rand();
+//console.log('>>>>>', rand());
+
+const key = CryptoJS.enc.Utf8.parse(keyRand); // 16字节
+const iv  = CryptoJS.enc.Utf8.parse(ivRand);
+
+
+// 密文是base64格式的
+function resBase() {
+    const plaintext = "继续教育小助手 | 19b76daa800";
+
+    // 加密
+    const encrypted = CryptoJS.AES.encrypt(plaintext, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+
+    console.log("密文（Base64）:", [keyRand, ivRand, encrypted.toString()]);
+
+    // 解密
+    const decrypted = CryptoJS.AES.decrypt(encrypted.toString(), key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+
+    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log("解密后:", decryptedText);
+}
+
+// 密文是16进制格式的
+function resHex() {
+    // 明文
+    const plaintext = '你现在可以同时观看多个视频，把画质调为流畅，可以同时打开更多视频';
+
+    // 加密
+    const encrypted = CryptoJS.AES.encrypt(plaintext, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+
+    // 获取16进制字符串
+    const hexCiphertext = encrypted.ciphertext.toString(CryptoJS.enc.Hex);
+    console.log("KEY、密文（Hex）:", [keyRand, ivRand, hexCiphertext]);
+
+    //     解密需要先把Hex转成WordArray
+    const encryptedHexStr = CryptoJS.enc.Hex.parse(hexCiphertext);
+    const encryptedBase64Str = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+
+    // 解密
+    const decrypted = CryptoJS.AES.decrypt(encryptedBase64Str, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+    //
+    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log("解密后:", decryptedText);
+}
+
+const arr = ['e4tlsxb5rn79i3d8', 'n4jlcs6hmkux5ozq', '07df7da2c660322642dd1c93fb5aadf6f775470cd56f615d3e87f3fdd95cea90507a3d3597985ef49d08c949ee063af2d8ed1f39534a3ed6b018c9d237369656e6e7d8f8069d0fa06e0ba70a7dde3130ef5e8df00cd3db9d00f79e8c25252d6ff315a05908775839a3467f5ad8cd4346'];
+// const arr = ['gyapdz1lot4bcmqk', 'vbze0486caxs13hg', '534a9e19441162e3ae07adeb263aff0620a96ad57d65e21315c0f3140692626e'];
+function der(msg) {
+    const encryptedHexStr = CryptoJS.enc.Hex.parse(msg[2]);
+    const encryptedBase64Str = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+    
+    const Key = CryptoJS.enc.Utf8.parse(arr[0]);
+    const ivKey = CryptoJS.enc.Utf8.parse(arr[1]);
+    // 解密
+    const decrypted = CryptoJS.AES.decrypt(encryptedBase64Str, Key, {
+      iv: ivKey,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+
+    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log("解密后:", decryptedText);
+}
+
+// 对象加密，密文16进制
+function encryptObjectToHex(obj) {
+    const jsonStr = JSON.stringify(obj); // 🧠 必须序列化
+    const encrypted = CryptoJS.AES.encrypt(jsonStr, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    res = encrypted.ciphertext.toString(CryptoJS.enc.Hex); // 返回 Hex 密文
+    xsplit(res);
+    console.log(jsonStr.length, res.length);
+    // console.log([keyRand, ivRand, res]);
+    // return res; // 返回 Hex 密文
+}
+// 解密对象
+function decryptHexToObject(hexStr) {
+    const cipherParams = CryptoJS.lib.CipherParams.create({
+        ciphertext: CryptoJS.enc.Hex.parse(hexStr)
+    });
+
+    const decrypted = CryptoJS.AES.decrypt(cipherParams, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+
+    const jsonStr = decrypted.toString(CryptoJS.enc.Utf8);
+    return JSON.parse(jsonStr); // 还原对象
+}
+
+// 加密数组
+function arrCrypt() {
+    const originalArray = [123, 456, 789];
+
+    // 1. 转为 JSON 字符串
+    const jsonStr = JSON.stringify(originalArray);
+
+    // 2. AES 加密
+    const encrypted = CryptoJS.AES.encrypt(jsonStr, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    }).toString();
+
+    console.log("加密后:", encrypted);
+
+    // 3. 解密
+    const decrypted = CryptoJS.AES.decrypt(encrypted, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+
+    const decryptedStr = decrypted.toString(CryptoJS.enc.Utf8);
+    const resultArray = JSON.parse(decryptedStr);
+
+    console.log("解密后:", resultArray);
+}
+
+// 加密数组，并且密文以16进制返回
+function arrHex() {
+    // 2. 加密数组，返回 Hex 字符串
+    function encryptArrayToHex(array) {
+        const jsonStr = JSON.stringify(array); // 数组转字符串
+        const encrypted = CryptoJS.AES.encrypt(jsonStr, key, {
+            iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7,
+        });
+        const hexRes = encrypted.ciphertext.toString(CryptoJS.enc.Hex)
+        xsplit(hexRes);
+        console.log(jsonStr.length, hexRes.length);
+        // 返回密文的 Hex 编码（默认是 Base64）
+        return [key, iv, hexRes];
+    }
+
+    // 3. 解密 Hex 字符串，还原为数组
+    function decryptHexToArray(strKeyIv) {
+        // 构造 CipherParams 对象（模拟已加密内容）
+        const cipherParams = CryptoJS.lib.CipherParams.create({
+            ciphertext: CryptoJS.enc.Hex.parse(strKeyIv[2]),
+        });
+        const decrypted = CryptoJS.AES.decrypt(cipherParams, strKeyIv[0], {
+            iv: strKeyIv[1],
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7,
+        });
+
+        const jsonStr = decrypted.toString(CryptoJS.enc.Utf8);
+        return JSON.parse(jsonStr); // 还原数组
+    }
+    const hexCipher = encryptArrayToHex(originalArray);
+
+    // const decryptedArray = decryptHexToArray(hexCipher);
+    // console.log("解密还原数组:", decryptedArray);
+}
+
+ // other数据
+ const obj = {
+	'readme':"file:///H:/manager/readme.htm",
+	'xb':"https://www.xb1.com/content/1241277",
+	'xuan':'https://www.xuan692.top/search.asp?searchword=%CB%AE%D2%B0%B3%AF%D1%F4',
+	'miss':'https://missav.ai/actresses', // ws   fans   live
+	'yang':'https://missav.ai/dm103/en/actresses/Mizuno%20Chaoyang?filters=individual',
+	'9C':'https://www.9c9c9c.com/show/33178_1.htm',
+	'njav':'https://njav.tv/en/v/wdi-062',
+	'nxyz':'https://njav.xyz/en/dm4',
+	'asahi':'https://spankbang.com/7xd7u/video/kv+179+reduced+mosaic',
+	'tbxyz':'https://sextb.xyz/actress/asahi-mizuno',
+	'eporner':'https://www.eporner.com/search/asahi-mizuno/',
+	'actor':'file:///H:/manager/default/actor.htm',
+	'18av':'https://18av.mm-cg.com/zh/uncensored_content/5266/PB-091.html',
+	'fanhao':'https://www.nilewu.cc/fanhao/202101/1815.html',
+	'view':'http://162.252.9.22/forum/viewthread.php?tid=675444&extra=&page=1',
+	'lists':'https://www.aventertainments.com/18274/2/29/product_lists',
+	'ggjav':'https://ggjav.tv/en/main/video?id=174868',
+	'tor':'https://fh.tor01.com/zh-cn/videos/tbtb-008/',
+	'18jav':'https://18jav.tv/videos/n0893-c',
+	'supjav':'https://supjav.com/',
+	'98':'https://8jp2.8y7p2.com/',
+	'best':'https://www.bestjavporn.com/video/scop-284-decensored/',
+	'mizuno':'https://www.bestjavporn.com/pornstar/asahi-mizuno/',
+	'btt':'https://btt803.com/?s=vod-read-id-29078.html',
+	'xhamster':'https://xhamster.com/pornstars/asahi-mizuno',
+	'javtiful':'https://javtiful.com/actress/mizuno-asahi',
+	'jabletv':'https://jable.tv/models/mizuno-asahi/?lang=en',
+	'jable':'https://avjoy.me/search/videos/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD',
+	'avjoy':'https://avjoy.me/video/704/tokyo-hot-n0893-%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%98%B3%E4%B8%9C%E4%BA%AC%E7%83%AD-%E9%AB%98%E6%B8%85%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95',
+	'badnews':'https://bad.news/search/q-%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%98%B3%20%E6%97%A0%E7%A0%81/via-log',
+	'ourjav':'https://ourjav.com/watchnow.php?watch=23553&name=%E5%85%A7%E5%B0%84%E6%B4%BE%E5%AE%A3%E8%A8%80!!%20%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD',
+	'pornhub':'https://cn.pornhub.com/model/nicolove',
+	'xvideo':'https://www.xvideos.com/tags/nicolove',
+	'youporn':'https://www.youporn.com/porntags/nicolove/',
+	'ixxx':'https://www.ixxx.com/zh/pornstar/nicolove',
+	'blackalley':'https://theblackalley.com/tour/the-black-alley/models.html',
+	'spankalley':'https://spankbang.com/s/theblackalley/',
+	'girlgirl':'https://en.girlgirlgo.org/c/6oz6ser',
+	'nancy':'https://www.sensualgirls.org/search?q=nancy+ho',
+	'Everia':'https://www.everiaclub.com/tags/[The%20Black%20Alley]',
+	'pornpics':'https://www.pornpics.com/channels/the-black-alley/',
+	'xslist':'https://xslist.org/zh',
+	'library':'https://www.javlibrary.com/cn/',
+	'sero250':'https://javplayer.org/v/sero-0250',
+	'tnaf':'https://www.tnaflix.com/search?what=Mizuno+Asahi',
+	'javhd':'https://javhd.today/embed/195643/',
+	'xavjoy':'https://avjoy.me/search/videos/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD',
+	'xszav':'https://cn.xszav.club/actresses/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%98%B3?o=tf&page=5',
+	'jax':'https://ja.javhub.net/search/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD',
+	'video':'https://cn.pornhub.com/video/search?search=japanese+av',
+	'pornpics':'https://www.pornpics.com/zh/?q=japanese+av',
+	'javrate':'https://www.javrate.com/actor/list',
+	'81av':'https://18av.mm-cg.com/zh/uncensored_content/18948/062614-629.html',
+	'safeplus':'file:///G:/safe/plus/play/index_.html',
+	'japan':'https://japanhub.net/video/34197/sero-0250-%E6%8A%9C%E3%81%8B%E3%81%9A%E3%81%AE14%E7%99%BA%E4%B8%AD%E5%87%BA%E3%81%97-1-%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD',
+	'softasa':'file:///I:/soft/asa/play/index.html',
+	'7sin7':'https://spankbang.com/7sin7/video/japan+gangbang',
+	'xhamster':'https://zh.xhamster.com/pornstars/nami-itoshino/hd?tag=uncensored',
+	'Paint':'https://www.paintinghut.com/model/asahimizuno',
+	'javfan':'https://javfan.one/uncensored/611322/',
+	'123av':'https://123av.com/en/dm4/v/iene-481',
+	'javxxx':'https://www.javxxx.me/video/wdi-062-decensored/',
+	'hornyjav':'https://hornyjav.com/wwk-011/',
+	'asporn':'https://asianpornjav.com/xvsr-263/',
+	'ggjav':'https://ggjav.tv/main/video?id=96248',
+	'88av':'https://88av.one/watch/43331',
+	'avlulu':'https://avlulu.cc/search/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%98%B3?',
+	'zimu':'https://www.subtitlecat.com/index.php?search=Asahi+Mizuno',
+	'javhoo':'https://www.javhoo.com/search/%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%99%BD/page/9/',
+	'18ccc':'https://18ccc.tv/search.php?kw_type=key&kw=+%E6%B0%B4%E9%87%8E%E6%9C%9D%E9%98%B3',
+	'missbz':'https://missav.bz/wwk-011',
+	'avuncens':'https://avuncens.com/?s=asahi+mizuno',
+	'avwto':'https://avwto.com/en-US/tag/mizuno-asahi',
+    
+};
+
+// ✅ actor数据
+const originalArray = [
+    'asahi mizuno', '小早Kobayakawa Reiko', '推川ゆうりYuuri Oshikawa', 'Mai Kuroki', 'Hatano Yui', 'Hanano Mai',
+    'Kuroki Mai', 'Mai Hanano', '倖田李梨Anri Okita', '冲田Riri Koda(Miri Koda, Miki Iwashita)',
+    '杏堂なつKyoudou Natsu (Sakaki Reina)', '愛乃なみNami Itoshino', '瀧澤まいMai Takizawa',
+    '都盛星空/森直美/森なおみ/村上穂乃花/Seira Ichijo/Metropolitan Starry Sky', '本田岬Honda Cape', '波多Yui Hatano',
+    '朝桐光Asagiri Hikaru', '草凪純/加纳瑞穂Jun Kusanagi (Mizuho Kano)', '花井メイサHanai Meisa',
+    '広瀬奈々美Nanami Hirose', '宇都宫しをん/宇都宫紫苑/安斋ららrion', 'http://hkbisi.com yhnujm2012 saq0', '',
+    'spankbang asahi_mizuno banjbl@gmail saq', 'miss asahimizuno banjbl@gm saq', 'eporner asahi_mizuno banjbl@gm Sa20#',
+    '佐山愛/Sayama Ai', '白河雪乃', '滕环奈/藤かんな/Kanna Fuji', '百多えみり/水喜れい/水稀みり', '', '', '', '', '', '',
+    'njav asahi_mizuno banjbl@gm sa20', 'pornhub  bjbl24-2925  Sq620#', '君岛みお', 'javhdz.today:::asahi_mizuno;psw:sq*6', '', '', '', '', '', '', '', '', '', 
+    'https://ja.wikipedia.org/wiki/Category:%E6%97%A5%E6%9C%AC%E3%81%AEAV%E5%A5%B3%E5%84%AA', '', '', '', '', '', '', '', '',
+    'https://ja.wikipedia.org/wiki/Category:%E7%86%9F%E5%A5%B3%E7%B3%BBAV%E5%A5%B3%E5%84%AA', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+];
+
+// ✅ 字面量加密，返回的密文是16进制的，加密other数据
+encryptObjectToHex(obj);
+
+// ✅ 数组加密解密，返回的密文是Hex，加密actor数据
+// arrHex();
+
+// ✅ 数组加密解密，返回的密文是base64
+//arrCrypt
+
+// ✅ 字符串加密、解密，返回的密文是base64的
+//resBase(); 
+
+// ✅ 字符串加密，返回的密文是16进制的
+//resHex();
+
+// ✅ 密文是16进制的解密
+// der(arr);
+
+// ✅ 字面量解密，返回的密文是16进制的
+// const restored = decryptHexToObject(hex);
+// console.log("解密还原对象:", restored);
+// ttr.value += ' ======> ' + restored;
+
+
+
+
+</script>

@@ -1,3 +1,11 @@
+// 各种数据，是一个json对象
+//Date: 2024/12/29
+
+//TM标志是“商标”的缩写，表明它是一个商标
+//R标志（®）代表“注册商标”，表示注册商标s
+//SM标志（℠）是“Service Mark”的缩写，指与服务相关的商标
+//与TM标志一样，SM标志无论是否注册都可以使用
+
 let pdir = './index.htm?';
 
 let datax = {
@@ -6,59 +14,90 @@ let datax = {
 		"抖 ® 音℠":"https://creator.douyin.com/",
 		"西 ® 瓜℠":"https://studio.ixigua.com/",
 		"知 ® 乎℠":"https://www.zhihu.com/creator/manage/creation/all",
-		"GreasyFo®k":"https://greasyfork.org/",
+		"Grok3":"https://grok.com/chat/",
 		"GitHub":"https://github.com/",
 		"文件传输":"https://filehelper.weixin.qq.com/?from=windows&type=recommend",
 		"去手写™":"https://pan.baidu.com/aitools/home",
-		"宝 ® 典":"http://127.0.0.1/2022/swbd/",
-		"在线工具":"https://tool.lu/",
-		"©hatGPT":"https://chat.openai.com/",
+		"谷歌翻译":"https://translate.google.com/?sl=auto&tl=zh-CN&text=Two-factor%20authentication&op=translate",
+		"在线工具":"https://www.toolhelper.cn/EncodeDecode/Url?type=2",
+		"©Gemini":"https://gemini.google.com/app?hl=zh",
 		"Google":"https://www.google.com/",
-		"图片压缩":"https://tinypng.com/",
 		"智学网™":"https://www.zhixue.com/login.html",
-		"PlayGround":"https://playgroundai.com/create",
-		"Fofa":"https://fofa.info/",
+		"诊学网™":"http://fjqz.51zhenxue.com/",
+		'图片压缩':'https://tinypng.com/',
 		"智慧教育":"https://www.zxx.edu.cn/tchMaterial",
 		"W3©school":"https://www.w3school.com.cn/python/index.asp",
-		"科技2.0":"http://html.study.bcvet.com.cn/el/proj_21275/index.html",
+		"在线扫描":"https://www.virustotal.com/",
 		"海西培训":"https://fj.rcpxpt.com/singleLoginPage?id=yongchun",
-		"ICO图片":"https://convertio.co/zh/png-ico/",
-		"IP地址":"https://ipaddress.com/website/github.com",
-		"西瓜电影":"https://www.sopoe.cn/xigua/142628.html",
-		"文件转换":"https://convertio.co/zh/",
-		"DNS列表":"https://devbox.cn/dns",
+		'Youtube℠':'https://music.youtube.com/watch?v=fwa8hmvFzM8&list=RDAMVME2jnVXTJ140',
+		"生成HD℠":"https://curlconverter.com/",
+		"Manus":"https://manus.im/login?authType=email&type=signIn",
+		"©Tool<sup>®</sup>": pdir + "tool",
+		"™Email℠": pdir + "email",
+		"™伊 © 凡<sup>®</sup>":pdir + "yifan",
+		"节 © 点<sup>®</sup>":pdir + "node",
+		"教 © 培<sup>®</sup>":pdir + "jiaopei",
+		"℠Other™":"./other.htm",
+		"™Readme℠": './readme.htm',
 		"电脑报价":"https://detail.zol.com.cn/cpu/",
 		"Win<sup>®</sup>系统":"https://msdn.itellyou.cn/",
 		"代理IP":"https://www.kuaidaili.com/free/intr",
 		"在线PS":"https://toolwa.com/ps/",
 		"分离人声":"https://vocalremover.org/zh/cutter",
 		"图片变清":"http://waifu2x.udp.jp/index.zh-CN.html",
-		"©Tool<sup>®</sup>": pdir + "tool",
-		"™Email℠": pdir + "email",
-		"生成HD℠":"https://curlconverter.com/",
-		"软件下载":"https://www.zdfans.com/",
+		'kimiPPT™':'https://kimi.moonshot.cn/',
 		"™S M S℠":"https://sms-activate.org/cn",
-		"诊学网™":"http://fjqz.51zhenxue.com/",
-		"节 © 点<sup>®</sup>":pdir + "node",
 		"Yoncms©gb":"https://yoncms.github.io/",
 		"在线编程":"https://anycodes.cn/editor",
 		"Java学习":"http://c.biancheng.net/java/70/",
-		"教 © 培<sup>®</sup>":pdir + "jiaopei",
-		"京 ® 东":"https://www.jd.com/",
 		"图片放大":"https://remove.photos/zh-cn/",
-		'16位颜色':'file:///H:/manager/color.htm',
-		"℠Other™":"file:///H:/manager/other.htm",
-		"电 © 影™":"https://www.sanmiw.com/",
-		"佐 ® 糖":"https://picwish.cn/",
-		"音 ® 乐":"https://www.fangpi.net/",
-		"E网通™":"https://www.ewt360.com/",
-		"书香博士":"http://www.sxwychina.com/#/",
-		"安全教育":"https://quanzhou.xueanquan.com/",
-		"学宪法™":"https://static.qspfw.moe.gov.cn/user/#/user/login",
+		"宝 ® 典":"http://127.0.0.1/2022/swbd/index/defaults/indexShow",
+		"豆包AI":"https://www.doubao.com/chat/"
+	},
+	'tool':{
+		'0':'©TOOL℠',
+		"PlayGround":"https://playgroundai.com/create",
 		"MGC工具箱":"http://wap.cpolar.top/tool",
-		"谷歌翻译":"https://translate.google.com/?sl=auto&tl=zh-CN&text=Two-factor%20authentication&op=translate",
-		"豆包AI":"https://www.doubao.com/chat/",
-		"™伊 © 凡<sup>®</sup>":pdir + "yifan"
+		'文件转换':'https://convertio.co/zh/',
+		"格式HD℠":"https://www.kgtools.cn/compression/header",
+		'Curl_Header':'https://tools.gzyunke.cn/curl.html',
+		'mp4Tomp3':'https://www.aconvert.com/cn/audio/mp4-to-mp3/',
+		'PDF24':'https://tools.pdf24.org/zh/',
+		'Spider℠':'https://spidertools.cn/#/curl2Request',
+		'FreeConvert':'https://www.freeconvert.com/zh/convert/video-to-gif',
+		'在线Logo':'https://www.shejilogo.com/',
+		'Weibo℠':'https://weibo.com/tiaok',
+		'℠m3u8™':'file:///G:/get-m3u8-main/index.html',
+		"ICO图片":"https://convertio.co/zh/png-ico/",
+		'℠mp3℠':'https://www.gequbao.com/music/40037',
+		'去手写℠':'https://pan.baidu.com/aitools/home',
+		'那 ® 风':'https://tools.thatwind.com/tool/m3u8downloader',
+		'视频放大':'https://github.com/k4yt3x/video2x/releases',
+		'MkvToImg℠':'https://www.aconvert.com/cn/image/mkv-to-jpg/',
+		'VideoToImg':'https://www.91yasuo.cn/video-to-image',
+		'BaseImg℠':'https://www.lddgo.net/convert/base64-to-image',	
+		'图片转换':'https://onlineconvertfree.com/zh/converter/images/',
+		'℠Python℠':'https://www.python.org/downloads/windows/',
+		'图片放大':'https://remove.photos/zh-cn/super-resolution',
+		'℠ICO℠':'https://toolonline.net/ico-generator',
+		"京 ® 东":"https://www.jd.com/",
+		"图片放大℠":"https://remove.photos/zh-cn/",
+		"西瓜电影":"https://www.sopoe.cn/xigua/142628.html",
+		"Fofa":"https://fofa.info/",
+		"Twilio℠":"https://www.twilio.com",
+		"AIPPT™":"https://gamma.app/",
+		'V2rayN™':'https://v2rayn.info/v2rayn-%E9%85%8D%E7%BD%AE/',
+		'在线工具':'https://tool.lu/js/',
+		'Deepseek℠':'https://platform.deepseek.com/usage',
+		'YOUCONVERT™':'https://v2.youconvert.net/ena/',
+		'kimiPPT™':'https://kimi.moonshot.cn/',
+		'16位颜色':'file:///H:/manager/color.htm',
+		'℠猿人学':'https://match.yuanrenxue.cn/',
+		'思维导图':'https://app.amymind.com/',
+		'思维导图x':'https://www.mindmeister.com/app/maps/team',
+		"GreasyFo®k":"https://greasyfork.org/",
+		"IP地址":"https://ipaddress.com/website/github.com",
+		'Ddosi℠':'https://www.ddosi.org/mm.html'
 	},
 	'email':{
 		'0':'©Email℠',
@@ -67,19 +106,93 @@ let datax = {
 		'126':'https://www.126.com/',
 		'163':'https://mail.163.com/',
 		'Google':'https://gmail.google.com/',
-		'无限邮':'https://www.2925.com/'
+		'无限邮':'https://www.2925.com/',
+		'无限邮4™':'https://www.2925.com/',
+		'Browser™':'https://www.whatismybrowser.com/',
+		'百家号™':'https://author.baidu.com/home?from=bjh_article&app_id=1656400639776341',
+		'OBfus™':'https://obfuscator.io/#code',
+		'firecrawl':'https://www.firecrawl.dev/playground',
+		'Xcom™':'https://x.com/i/flow/login?redirect_after_login=%2Fi%2Fgrok%3Ffocus%3D1',
+		'歌曲海™':'https://www.gequhai.com/play/1877160',
+		'Manus™':'https://manus.im/app/Wm7XVbLIQq7r2TY0sMSdsV',
+		'百家号':'https://baijiahao.baidu.com',
+		'头条™':'https://www.toutiao.com/',
+		'Icons™':'https://icon-icons.com/zh/pack/Geometric-Symphony/4102',
+		'图片透明':'https://www.jsongj.com/img/transparent',
+		'Diabrowser':'https://www.diabrowser.com/download',
+		'Zimu™':'https://www.subtitlecat.com/index.php?search=Asahi+Mizuno',
+		'OBfus9™':'https://obfuscator.io/#code',
+		'OBfus8™':'https://obfuscator.io/#code',
+		'OBfus10™':'https://obfuscator.io/#code',
+		'OBfus11™':'https://obfuscator.io/#code',
+		'OBfus12™':'https://obfuscator.io/#code',
+		'OBfus13™':'https://obfuscator.io/#code',
+		'OBfus14™':'https://obfuscator.io/#code',
+		'OBfus15™':'https://obfuscator.io/#code',
+		'OBfus16™':'https://obfuscator.io/#code',
+		'OBfus17™':'https://obfuscator.io/#code',
+		'OBfus18™':'https://obfuscator.io/#code',
+		'OBfus19™':'https://obfuscator.io/#code',
+		'OBfus20™':'https://obfuscator.io/#code',
+		'OBfus21™':'https://obfuscator.io/#code',
+		'OBfus22™':'https://obfuscator.io/#code',
+		'OBfus23™':'https://obfuscator.io/#code',
+		'OBfus24™':'https://obfuscator.io/#code',
+		'OBfus25™':'https://obfuscator.io/#code',
+		'OBfus26™':'https://obfuscator.io/#code',
+		'OBfus27™':'https://obfuscator.io/#code',
+		'OBfus28™':'https://obfuscator.io/#code',
+		'OBfus29™':'https://obfuscator.io/#code'
 	},
 	'jiaopei':{
 		'0':'教 © 培℠',
-		'天津政工':'http://tjzgwp.chinahrt.com/',
-		'海西培训':'https://fj.rcpxpt.com/',
+		'教师信息':'http://jiaoshi.fjsjyt.cn',
+		'海西培训':'https://fj.rcpxpt.com/loginPage',
+		'™M海西培训':'https://fj.rcpxpt.com/wap/login',
+		'™Druid':'https://fj.rcpxpt.com/druid/login.html',
 		'华医网':'https://cme.91huayi.com/',
+        '™华医网':'https://www.91huayi.com/',
 		'河南专技':'https://hnzj.ghlearning.com/',
-		'暑假研修':'https://basic.smartedu.cn/'
+		'天津政工':'http://tjzgwp.chinahrt.com/',
+		'中国教育':'https://www.enaea.edu.cn',
+		'PyWebView':'https://pywebview.idepy.com/examples/events.html',
+		'暑假研修™':'https://basic.smartedu.cn/',
+		'赤峰™':'https://nmgcf.chinahrt.com',
+		'™师德师风':'http://ydwxw.yjyunedu.com',
+		'™科技2.0':'http://html.study.bcvet.com.cn/el/proj_21275/index.html',
+		'DALL.E℠':'https://bing.com/create',
+		'™Manus':'https://manus.im/app/Wm7XVbLIQq7r2TY0sMSdsV',
+		'今日头条™':'https://www.toutiao.com/',
+		'™百家号':'https://baijiahao.baidu.com/',
+		'™Claude':'https://claude.ai/',
+		'™Hrobot':'https://www.91huayi.com/robots.txt',
+		'™Hsitemap':'https://www.91huayi.com/sitemap.xml',
+		'™Sitemap2':'https://www.91huayi.com/sitemap2.xml',
+		'™Enaea':'https://www.enaea.edu.cn',
+		'postman':'https://app.apifox.com/user/login?redirect=https%3A%2F%2Fapp.apifox.com%2Fmain',
+		'™Tutv':'https://www.tutv02.cc/',
+		'™kankan':'https://xiaoyakankan.com/',
+		'™mmov':'https://cn.mmov.app/',
+		'™ModelDown':'https://huggingface.co/ggerganov/whisper.cpp/tree/main',
+		'™百家号16':'https://baijiahao.baidu.com/',
+		'™百家号17':'https://baijiahao.baidu.com/',
+		'™百家号18':'https://baijiahao.baidu.com/',
+		'™百家号19':'https://baijiahao.baidu.com/',
+		'™百家号20':'https://baijiahao.baidu.com/',
+		'™百家号21':'https://baijiahao.baidu.com/',
+		'™百家号22':'https://baijiahao.baidu.com/',
+		'™百家号23':'https://baijiahao.baidu.com/',
+		'™百家号24':'https://baijiahao.baidu.com/',
+		'™百家号25':'https://baijiahao.baidu.com/',
+		'™百家号26':'https://baijiahao.baidu.com/',
+		'™百家号27':'https://baijiahao.baidu.com/',
+		'™百家号28':'https://baijiahao.baidu.com/',
+		'™百家号10':'https://baijiahao.baidu.com/',
 	},
 	'node':{
 		'0':'©Node℠',
 		'2dust':'https://github.com/2dust/v2rayN/releases',
+		'2dust™':'https://github.com/2dust/v2rayN/releases',
 		'nodedog':'https://nodedog.org/',
 		'FreeClashNode':'https://www.freeclashnode.com/',
 		'ClashMeta':'https://clash-meta.github.io/free-nodes/',
@@ -89,18 +202,18 @@ let datax = {
 		'Flikefy':'https://github.com/Flikify/getNode?tab=readme-ov-file',
 		'Git节点':'https://github.com/Pawdroid/Free-servers',
 		'vpn':'https://github.com/freefq/free',
-		'freef':'https://freefq.com/v2ray/',
+		'freevpn':'https://github.com/asdsadsddas123/freevpn',
 		'v2cross':'https://v2cross.com/archives/1884',
 		'aiboboxx':'https://github.com/aiboboxx/v2rayfree',
-		'gaofumei':'https://www.gaofumei.net/networks/12185.html',
+		'gaofumei':'https://www.gaofumei.net/networks/',
 		'kejileida':'https://kejileida.net/5781',
 		'clashnode':'https://clashnode.xyz/free-v2ray-node/',
-		'aliyunjc':'https://www.aliyunjc.net/2796.htm',
+		'BestClash':'https://github.com/PuddinCat/BestClash',
 		'NiceVPN':'https://github.com/NiceVPN123/NiceVPN',
 		'Flik6':'https://github.com/Flik6/getNode?tab=readme-ov-file',
 		'Clash':'https://github.com/abshare/abshare.github.io',
-		'Clash':'https://ablnk.absslk.xyz/wtB1q4A',
-		'Clash':'https://github.com/Pawdroid/Free-servers',
+		'NoMore':'https://github.com/peasoft/NoMoreWalls',
+		'Clashx':'https://github.com/Pawdroid/Free-servers',
 		'proxy':'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub',
 		'mirror':'https://mirror.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub',
 		'mksshare':'https://github.com/mksshare/mksshare.github.io',
@@ -110,51 +223,173 @@ let datax = {
 		'Flik6':'https://github.com/Flik6/getNode',
 		'zzzgydi':'https://github.com/zzzgydi/clash-verge',
 		'v2rayN':'https://github.com/2dust/v2rayN',
-		'Clash':'https://github.com/VertexGeek/clash-v2ray?tab=readme-ov-file',
-		'2023049':'https://gitlab.com/mianfeifq/share',
+		'Soroushmirzaei':'https://github.com/soroushmirzaei/telegram-configs-collector',
+		'Aibobox':'https://github.com/aiboboxx/v2rayfree',
 		'Free-nodes':'https://clash-meta.github.io/free-nodes/',
 		'订阅转换':'https://subconverters.com/',
 		'clashtosing':'https://sing-box.xyz/clash-to-sing-box/',
 		'Clashtosing':'https://suburl.ljctkp.top/',
 		'v2raytosing':'https://subconverters.com/v2ray-to-singbox',
 		'Clash':'https://github.com/zzzgydi/clash-verge',
-		'Clash':'https://github.com/zzzgydi/clash-verge',
-		'Clash':'https://github.com/zzzgydi/clash-verge',
 		'v2cross':'https://v2cross.com/1884.html',
 		'Nodefree':'https://nodefree.org/',
-		'vpn':'https://github.com/mianfeifq/share',
+		'vpnx':'https://github.com/mianfeifq/share',
 		'v2rayshare':'https://v2rayshare.com/p/2760.html',
-		'freenode':'https://freenode.me/'
-	},
-	'tool':{
-		'0':'©TOOL℠',
-		"格式HD℠":"https://www.kgtools.cn/compression/header",
-		'Curl_Header':'https://tools.gzyunke.cn/curl.html',
-		'mp4Tomp3':'https://www.aconvert.com/cn/audio/mp4-to-mp3/',
-		'人声分离':'https://vocalremover.org/zh/',
-		'Yoncms':'https://yoncms.github.io/',
-		'FreeConvert':'https://www.freeconvert.com/zh/convert/video-to-gif',
-		'在线Logo':'https://www.shejilogo.com/',
-		'Weibo':'https://weibo.com/tiaok',
-		'm3u8':'file:///G:/get-m3u8-main/index.html',
-		'm3u8':'file:///G:/get-m3u8-main/mitm.html',
-		'mp3':'https://www.gequbao.com/music/40037',
-		'试卷去手写':'https://pan.baidu.com/aitools/home',
-		'那 ® 风':'https://tools.thatwind.com/tool/m3u8downloader',
-		'图片视频放大':'https://github.com/k4yt3x/video2x/releases',
-		'MkvToImg':'https://www.aconvert.com/cn/image/mkv-to-jpg/',
-		'VideoToImg':'https://www.91yasuo.cn/video-to-image',
-		'BaseImg':'https://www.lddgo.net/convert/base64-to-image',	
-		'图片格式转换':'https://onlineconvertfree.com/zh/converter/images/',
-		'python下载':'https://www.python.org/downloads/windows/',
-		'图片放大':'https://remove.photos/zh-cn/super-resolution',
-		'ICO':'https://toolonline.net/ico-generator',
-		'V2℠':'https://v2.info/v2rayn-%E9%85%8D%E7%BD%AE/'
+		'Clashfree':'https://github.com/aiboboxx/clashfree'
 	},
 	'yifan':{
-		'0':'小 © 宝℠',
+		'0':'伊 © 凡℠',
+		"书香博士℠":"http://www.sxwychina.com/#/",
+		"安全教育":"https://quanzhou.xueanquan.com/",
+		"学宪法™":"https://static.qspfw.moe.gov.cn/user/#/user/login",
 		'书香博士':'https://pc.sxwychina.com/jx/index.html#/Home',
-		'4399电影':'https://www.4399dmw.com/donghua/',
+		'4399™':'https://www.4399dmw.com/donghua/',
+		"电 © 影™":"https://www.sanmiw.com/",
+		"佐 ® 糖":"https://picwish.cn/",
+		"音 ® 乐":"https://www.fangpi.net/",
+		"E网通™":"https://www.ewt360.com/",
+		"江西教育":"https://jx.smartedu.cn/#/",
+		"jxjy":"https://jx.smartedu.cn/#/",
+		"onlinegdb":"https://www.onlinegdb.com/",
+		"online1":"https://www.bc-cn.net/run/",
+		"online2":"https://www.bc-cn.net/run/",
+		"online3":"https://www.bc-cn.net/run/",
+		"online4":"https://www.bc-cn.net/run/",
+		"online5":"https://www.bc-cn.net/run/",
+		"online6":"https://www.bc-cn.net/run/",
+		"online7":"https://www.bc-cn.net/run/",
+		"online8":"https://www.bc-cn.net/run/",
+		"online9":"https://www.bc-cn.net/run/",
+		"online0":"https://www.bc-cn.net/run/",
+		"online11":"https://www.bc-cn.net/run/",
+		"online12":"https://www.bc-cn.net/run/",
+		"online13":"https://www.bc-cn.net/run/",
+		"online14":"https://www.bc-cn.net/run/",
+		"online15":"https://www.bc-cn.net/run/",
+		"online16":"https://www.bc-cn.net/run/",
+		"online17":"https://www.bc-cn.net/run/",
+		"online18":"https://www.bc-cn.net/run/",
+		"online19":"https://www.bc-cn.net/run/",
+		"online10":"https://www.bc-cn.net/run/",
+		"online21":"https://www.bc-cn.net/run/",
+		"online22":"https://www.bc-cn.net/run/",
+		"online23":"https://www.bc-cn.net/run/",
+		"online24":"https://www.bc-cn.net/run/",
+		"online25":"https://www.bc-cn.net/run/",
+		"online26":"https://www.bc-cn.net/run/",
+		"online27":"https://www.bc-cn.net/run/",
+		"online28":"https://www.bc-cn.net/run/",
+		"online29":"https://www.bc-cn.net/run/",
 		'央视少儿':'https://tv.cctv.com/2016/10/28/VIDEO9PCZnv9OJiPxo7hidiy161028.shtml?spm=C55899450127.P94Bw8ryeI2r.0.0'
 	}
 };
+let datas = 
+    '322edd8fcae42525ee5102f627dc88178a4038628cb5099706aa33897048fba74ff56cb0fd2ee237bfc13d7cee6c986f706'+
+    '762c6518ae2edaaf4f3419da8ff2bd900bf67ad1d4c5f7e1787088ac07cf1ac96a62c12c09e3d8bfa5028e5bcab6c4784e0'+
+    '12325f0281f0206c5fc8bc23fe7b80a8e718b8c5f82e03076b2946ff462fcb873dfc83c903b56b9774ef3dffcdff233b22d'+
+    '65cae42933bcedb101d79a30d5477866af70fb9cf91158d75b5ecd0b9c508b7f497c770d4e07174965110b4dd400f62e898'+
+    '8225c85984f49b19bae693fffb8b21a2dfbd4dcbfb730e76ee1d9bbdcb7658bc84955d562b577587f50fc5a8c903b563d31'+
+    'ae8a3eebe232b05d153b4762bc5cf75b60465f21a39a1c4bcbe099c451db76c3cba10961bbd7e1cc55bc904d88e678b0179'+
+    '4df1710cc15ea589b807c50b46a840219a0723947c0ec4fe69da92edaa2ed44989e57293a24da0ed2a2ae94e3fa19688d54'+
+    'b40df2428c05c4a113fb10441337dc297c677f31faa84d2803a3b7878b9b48f0c26cc9653dc4bd89eb56aa3a336479517d6'+
+    'd981b5688870a30626b0bb49706be3a10f187024a52da784ba3295bab56c81d4772c88cc57d8b341f316910aac04c135dbc'+
+    '2e6092b36c74759223c65389809e81a86c258c77fb145ed02770ed41b4690149065e4098f1dab09c3cbede29aa413f09a0a'+
+    'a1a9909350914615febed2093c255af110bf5f6726522e505a06cec5f19452e430fa8eb6c653151679fb6309898094d745b'+
+    '5e9d06c0de3510ffecc272274342bb7b111a3c591be51f9b4aaa499f45ee44d8ca5ec4a6ea92dfb587e904f923d47442fa0'+
+    'ef23db11eff00262bb5faf46fb6c1a249cd6a96501f2c085806aad3b87bf3f229f3a7c076f3184d04c907632b57bbb84d35'+
+    'aa67995e566c58a1693583f94aa65a0921602a61cba0de9239ab5ad2edc9a13433f11336945d7fa6b637fc8c2216ff7ff9f'+
+    'e7aa44ce2d7a8b8b5982f4d97f3450a25852917cccb266f6e084ae5256213c4e9727614c4634f7c3bc942b9ec09400dbfb3'+
+    'a1404851caaa1649b32c2d0c0bcb8aa5ade97bd32a116ff8d1e1847def6ee94cb9e8c909b8770f797386306d3d9a93c7f79'+
+    '502d7924648da9739fb617b891ef8af7158421180ab317f796cb6723db2a948c2a1d8fea6643876632efb65ffa0e8544f14'+
+    'd6a7c6a4b38bbd0294c32ff2e332d0febba91b7c1c77668dac8b1617311247352abda9fc210784b7ce13cf6f971865bd162'+
+    '2c6db2539383ad3d61f0bb2332916cf1716f26e4ef66017b61e10c5105b8e1360af816a41940dfeddbdcb56917975f9bba6'+
+    '3c7909856f553aa740f16135dc0c6c04816e5531f91905009a677dc2fae23a8b59e409a3eb694de39b37dfc586ee97bfc13'+
+    '69fba170c53086ead3bb14a5f503b458de5e2f3e0d5672cced24239cccde01c3bbac2c1a765285069c7aad42998f19e2956'+
+    '153d9d3db715ef6c64acce6dfafe4d50dacb3c998d1805522f04d10bd02214554ccf17b465c134f8b32d4cba56382821e0e'+
+    '62a5ae3079998014eae39fb772ff4fb535a9c6fcd30cdd8c264e44c76bd02dfe391d66193dae222aa0e412a46f8ee5d6efb'+
+    '03f2d818bd7f3a89fc1f3ad035f079a12ea07e9035e5c7f65dd0915edc1df110326e0645b994b027f9090c83e2810249fbc'+
+    'c168c50b3b9353c011674c349fbb697fb11ea8cd78325033ae732daba0a794a58e42ca736b2ce4d1f58babf5495d84d8e46'+
+    'd3794b7c2cbe0a7db86f888c1dbd2f6fa57c371a3e1a40d70f5f72b7e45f1abad41e7aabc52baafd06b1722709317376778'+
+    'd4be9aad14b1aac70c3efd2cc3da9abd00bb252dc006772409b917bd23b4b5cd259f23be5cf3f6208c650254708ad6cf6a3'+
+    'dada70534db64742424f4cd22a0267203ae50cedbd8db1725ef11447a0843251d2f9e4c01fecec9836fe394c306e88c74a5'+
+    'd13c2d03bdd0ce599d33eeb50bc6f2174c3f8c9c5a5dc4f7a327016a7497b533d83743bdc8e5b030f33cfd0867e1f6a6d74'+
+    '0f92e5c28d52ee1247ede3b59f6f000bef62a3387aa9c81f8de01ea2b5bfa056c51fe698b4d352052b1dece5bafbf45c3c1'+
+    '5d23953dd9654218f0a4f96a8e51ff75f655332585eec346c8986daefa1e30fe5e0916c5cc9af0b1a19a8f0f711327a1a04'+
+    '9899ef86202c93b558e784d01dd4444381c83019445172b4a9efe6a6407d79921d4f72d2e92c138830682162f234010fd3c'+
+    '1fe86df03571bf71275aa43646f276373435f46ca217233a407249f8779c5ef903fe4471bb61c1a35b7729543bb3441279b'+
+    'af9189fcb83928b7cdbca35bdc1976f290a7c127e1520dc539e0afa0e755b1bcf978dca953a141c805741b4f6b662ec2ddc'+
+    '1974e1b8d56cc6123574d5292a23ac7f5918a08e7b4b164a7226a469c69935638642085c60cb0e4ef0ccafeb22c8f6ce573'+
+    '7d40d2241b5937af88a6581df308bdacff308ed6a5f486b40c4dc09926578fd3adfd5c3b696ea32071beb5fd3ec5759bc19'+
+    'a8304a7240df1984a879f5666dcd0eb8a18c554340e3ee617264bfd52806f4a4ec50fc423d803c0c9c4c18b44bed7d450fe'+
+    'bcea2ba535fbef3b6bc4b1c6ad58ac466d5ca12463ca0c5e8b8bf0d6766f62f1d3b978b6b5ad5fd3f3d6bb787e1ea24c3c7'+
+    'cdb0dcf4a281e0a06e610bf28092bf2331ddffe1132246fec2974cbf5745e3eb77c32699591c2d093054f4ca7a7d6213fc6'+
+    '328717cf0f623fe3a68becc396d16cb8be8b8ec0207574ca1e32e55b8a91c5f7bc196b435436bdcea3c7e31c937c0c1443c'+
+    'f4f1ad5ab79735d294fe6572adcbf50496e06692fa28d922e84f16df246dc738c51e3ba954ade8bfd9ce3a03129eaa08b59'+
+    '8a6045a75c8c6abeb3110e36f5111c2bd12128126a9375ed4eebcc049daf4325aa98946ef74457df5234f89372c3b6e0632'+
+    '329edeeba446a39028be93e87dc1aeee18b209d2c3521f16c108d6195cae87cecd627b35ccdb8ce841e578551bbebf13397'+
+    '4e098e1a7657f9ff01250881673644f3d9612bab48aac57679894ce963830ada8d043be809a8b76fecd72e02a99d9c71045'+
+    '62d344b02974e4de0812b9b8df27d265ee0da59d0420a6940f4fbe55bec2be290413b486382955bbcbd13af1a0667f75022'+
+    'a2f87701d2870c3b5284a561af61bd9f0aeba7d9f5629bfbde9acce8e19f2e428d3da3503aff7a94e6cad85f61128def463'+
+    'f4775cf138742926352cad1359ee8c5fb011725556d59e0595dd8b12c36f982a3d3fccd551d3c8744368f2dff7596e3fd0e'+
+    '70bae4ec87642384ab059ec2dd7d765e1492aa94e3ae5f59a6a92698d3d06fa1a26090554fb59b88fbbd91d392a7bd777dd'+
+    '2892ff3c1c0e2ed9989b2a46fb5fe1f2aaf859015e51f22846b7aa6cfeb0bb3deb80a8ebfe05cf1624803e3e40d3b8f318a'+
+    '3a4f2dbc5212a27ac39c89b296ac2d6b481e1b2b4f3569708fa894a79ecf2dcb45c850966cfc70c48d3929fa1b905766069'+
+    '69f1cfe1ed64de2686c49e5fc18b27fa7a03cac648ad2a95ca491d7c6acc8c355d9601b93dad70ddaa2a2be8e60a821927c'+
+    'dbdc60c3e8ee8ab97c4618c39eceb12480d9e909b0b2e613387afdf89d770c64dbbc9f0ceda8832baa92bab23b19b3e13f9'+
+    'ce4f5dfbb16f08673373c582eeda893a4c31ef481f33aba27fd58c6b47b8b4ff0dd0d1e0de85c7a6f890600970b243d8d9d'+
+    '493c9c2fd382376f20a0d592b5a9fd62ecefcd3b81195202d2a90799b1fdae194400fbeebe02b05ec50b134a9a1f3a9eb0b'+
+    '8e16b075081d383100d251d1601068ce5102e64b9c0c8c95b13e01392cdbab9110a7c20f0e010748078b6af4d401ce8b52e'+
+    '3069005224c12759d90a6c95731e3ff03e5ab6abc8ada86f1e07dd1c6c615aed906dc9fe6aa01e348c177f374d9e7a8f815'+
+    '7639c3d64e040fa55e1c59580bda4875e56739c4c302407c4d6d67f7b5c39c4a14d7c579641c6321124e4ff821857dc7052'+
+    '11d35b9cb210a8cf667f3ab167d456e4a7a387fbbc8d49193ff97820f91b9098446a0d1f68cc0b8d82652091626ae367a93'+
+    '001e4832139bf6a9af5cc1549fc5342fdb8818929f8f26fb6d9131bba4f101d8e31b7407ad7b5f40f8435166ddfb7fa0437'+
+    'f7a5d463cea8fa258efebb31e2c595aa217ca23a13b998709a0ead60c7c195cd0b63121e492fca4c0da421aeb6e37069e75'+
+    '018bb05f6b6b93f695b7e74d059c5caa51aba5d583c5cd52aa342ed195e68cb4e17104efe371ad75d9b2d7fe4289d7d85e3'+
+    '5ebeeea4ef6a06cf76c54327b62450f83d0da12ac34a40fef4ad2b123ca1e8859d19fa3c07563be44e4511415cad03690bb'+
+    '8b647f6e01efbe182b211e7f872c45b8709b0c15255051a004ec444a689c18b6db8492d244f0dcc9e368a0c42648e2a3c4e'+
+    'cf90f5ec92360b106a46abcd5d81605d7c6c1318d1bcd0007e8c9c2144fbb287bab5334d751999545523325c2d501d9a41e'+
+    '6d6579dcf7b3678941c53ad8e9ea46863a7d64975aa94ff0495b94c14dc18256ea16cd56746e002fd4f6446ae775e3c4efc'+
+    '291e7ca710a250dff9b3a3d7d6c88095f04e614cb621e02ba8e55e168e81289301ee57b830bc980122b4541e3bf9a6fe4eb'+
+    'b9b63abd3947c98ee4752a4fe689877eaf2144a4135d3fd827ea66b48e4726ef13fbb32e0258f79c68b9e954b50e653074f'+
+    '36094bdcec1bd84e6babd56ef1179881c8e63d22886c9ed3cbe36034afaae8bb74cf4c7b0d17eb445616de8c5b0c46645f3'+
+    'ceb727de715e7f9582e98e089d5dbd242ec53e8055bcacfc8768bd187007714d77422a88c369cec6e0cb8bca308db907206'+
+    '96998f619202afb8acab5d052547b45b5a9186ffa78e781fd324fbf4e92136f6b337f432d14ba82220723579158e86cafea'+
+    '02a32425706b607b8cf985e9e9193fcc53aec5176326184e5c92509b74053b066004337742e5a5af04101c2b7d79a3a1051'+
+    'c40c3685c0666fb4730576bef05aaff503425e8b9bb5e45c9be3c842dc4543543bf06d36c230c1919b56167926c6aa238cf'+
+    '25b438db55aba4f43ceaa82e51584329f5dce371d6efa8437c8a8e3c661f3f43864be52d2b02080e2c39b7ffaeac4fd439a'+
+    'a5d5cde6b6123aa01a61b6065b802256ef311501e7f15eb96788002bdd7640e1354245d6137ba0f08c35236328e5de0b6b1'+
+    '2d31b81a1a2203777455f9f7792c473feab9c39e6f3328c9f77a4b1370d31c4e76711a8a05d58e295447de1fbfbd48910fa'+
+    'ff9c792cd51ccb86c7380f90432e674eae4c2b4708cc0d1851c3f87fb257ac6530c737bcbb1d352ac0ff8c6e3e459b0e6e8'+
+    '4315c9b53a545880b2c20fdacd2ffb1cb93f587d27bc8f9ed997ab4b28686df2126c3ea2ab174251b41e7bb97182640c30d'+
+    '8b6fbc13be30fc37ee6c9e6c0';
+
+const strKeyIv =
+    '033251f9c259aec6a76527c38972e0802f665bef103b3609c395eb839c89d193a071c64e3c7c81c2aaa3900bd1d4c767df1'+
+    '1c9536c85906630dda757b4534ffac05d57e7cc1f1985f8171b5fd48a896a196047179f98be181c6ac1021d2561794baf7a'+
+    '95d90c79e95ad46f5a61dd43cc476ff6d357bf91112a921eed150beef9fd2df2f9e10e899bcf53b806bb8730c0bfde62378'+
+    '600ec06ce8c148d4afc34445ae197d554a48179d14ba2595a770132ff443e8821b2a2808a46cb8be49d84defdd95a7b65ee'+
+    'a730bd812b83846c966aaaf271f81ad901d002b0570e22c28baf4d30f7a9cd53498f593e605e356b1456e18cd4bb4b1c362'+
+    '26aca38be4d4bf74c46c58ac69689c106f9f7d37aef3f9232792ed0ce49d70dbc4a052dac5de4b90118f7946d32a1303570'+
+    '0fc79916499e498657bb119af9462a4295f6cde9e37f47c9fa6d2b83b685d3f224387e2d5969f499139ec7307028024b471'+
+    '51e13b28991605b26a3c1c72d703bb9c72c17486c29cfb952dea45ab23897812671a58b0f674d14f5ecf60ece6c92f429df'+
+    '44d3ed79f4615620ee9ed66bcc02a374d92d599572a40303d1fce937d7fa5dec3a5cb7d274c6ad8375b6952c0ef3a9aad74'+
+    '6cb04903fdecb638f68395eec097de2f06aa6e174d43810e913bc10fbd5af8b8103d4cbb12381289c74d566f27f4c8f61ab'+
+    'cb198b820fd46d5ecdcddc2d5046e66abc1adfef2fda71c40d967153999d8c8c8478df65391dce6359004b6cf19b3d00e4a'+
+    '21c7a73a131c08cc299f57eafbdb9f4a7dca2d40990355a0cc8f26dc0de9af86d82b8376298a09965a715722f2f6ef6d6a0'+
+    'a8f12f6628126dc4d5df04e84c2ce829dbf69444b191226b9704dd3d5da47ce50b1c235ce1b735e994d5646574231b717d9'+
+    'c6033976a32059e8ed1b76acb2bbbc61f1c1649b5e4bba2da07dac305b4c81ed4512090fd10575a44ff154c724e6cde304d'+
+    '6037b0374518168e249e10b24c18ddf3237ca21333351f8c3a9afe46b47cf60140bfab3ee86076e2c686b664078de3ef81b'+
+    'b2380773dce3655952e63d270548445df4c2198658f7e8aee866c182d903b049d77787fa0f4ad2166849929c73e53091091'+
+    '6c6311164346a3aa8031c2353770477d02d3d597b36c5514a21b3e3a748a91530d208851dbba90340ea61fed1e4e0d3cfc1'+
+    '89eb16c84aefa17c2d956eb54e2942d580b59436e067d1efdfad221a97a756210b658b0a088b6e8d30fd51396815d53a5a7'+
+    '128cc06ccc9dede249cb548f98da13441d8cfa451664ab53365568c6f560909ba3ba70676f1b959a08d48f6fa98baebe6ca'+
+    '5fadbaa285856d93f1b355cff98841f864d9971a215a28b4612711c858b9282bb489d521da7488dcb365d56baeb3ef275b4'+
+    '10d0b043ee34eb6e0c2995fcd72601cece33efafd0f60db1a6089591e01412adf0a16fd9870e9fa5f9435d3d77ae02c35e8'+
+    '3a8419be36e64e89c2a63276ee39c077da902504e6bbe9fb57a157cb7958cfe9de1287ba0c6f9505c13d76faad5b9c98538'+
+    'cf5d2de94d7b4912863fcd1a8565b46ddc52a92b70c53a8197a3c4e4cbb1876d1e281629e9d0adfdab03f702eded1c244a0'+
+    'fd92624b377f6539aa8fbd04fd06c9ee4a5b6b8a02937d74029e10e0609e7759f13c3caa8b272df75ab63950438ca146ad2'+
+    'adf2199ecde37a79f208675e49249aee9900373d62c41325e7cf7b3ec99106b734f35b12c1173eeaa3a26e97ce6a889f360'+
+    '5be9930576f62bae6cc718c744c2931b68c0a1809ffccd0cf9f7fe8fe4486da05a2c1205bb965a9f5c275fe252c03c4888f'+
+    '61e81d6cdab6913a38dcb1a89b96013447ed0dc4c82ad50060';
+
+
